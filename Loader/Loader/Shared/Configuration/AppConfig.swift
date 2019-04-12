@@ -14,5 +14,10 @@ class AppConfig {
     
     static let userName = "Sergey Kostrykin"
     
+    static let resendInterval: TimeInterval = 300
+
+    static let resendIntervalKey = "resend_interval"
+
+    static let configPath = "/Documents/loader.cfg"
     
 }

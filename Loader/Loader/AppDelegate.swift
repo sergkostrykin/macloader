@@ -11,16 +11,22 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        setup()
+        NSApplication.shared.servicesProvider = ServiceProvider()
+        NSUpdateDynamicServices()
     }
 
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+}
+
+
+
+extension AppDelegate {
+    
+    func setup() {
+        if Double.readFromFile(with: AppConfig.resendIntervalKey) == nil {
+            AppConfig.resendInterval.writeToFile(for: AppConfig.resendIntervalKey)
+        }
     }
-
-
 }
 

@@ -17,6 +17,8 @@
 		5CD80747225F734900926CF0 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD80746225F734900926CF0 /* Response.swift */; };
 		5CD80749225F852900926CF0 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD80748225F852900926CF0 /* StringExtension.swift */; };
 		5CD8074B225F9C9D00926CF0 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8074A225F9C9D00926CF0 /* DateExtension.swift */; };
+		5CD8074E226086EC00926CF0 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8074D226086EC00926CF0 /* ServiceProvider.swift */; };
+		5CD807502260B72A00926CF0 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8074F2260B72A00926CF0 /* DoubleExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		5CD80746225F734900926CF0 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		5CD80748225F852900926CF0 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		5CD8074A225F9C9D00926CF0 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		5CD8074D226086EC00926CF0 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		5CD8074F2260B72A00926CF0 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,13 +69,10 @@
 		5CD80729225F68BF00926CF0 /* Loader */ = {
 			isa = PBXGroup;
 			children = (
-				5CD8073A225F6DA700926CF0 /* Shared */,
 				5CD8072A225F68BF00926CF0 /* AppDelegate.swift */,
-				5CD8072C225F68BF00926CF0 /* ViewController.swift */,
-				5CD8072E225F68C100926CF0 /* Assets.xcassets */,
-				5CD80730225F68C100926CF0 /* Main.storyboard */,
-				5CD80733225F68C100926CF0 /* Info.plist */,
-				5CD80734225F68C100926CF0 /* Loader.entitlements */,
+				5CD807512260B83D00926CF0 /* Modules */,
+				5CD8073A225F6DA700926CF0 /* Shared */,
+				5CD807532260B87300926CF0 /* Supporting Files */,
 			);
 			path = Loader;
 			sourceTree = "<group>";
@@ -90,6 +91,7 @@
 		5CD8073B225F6DB800926CF0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5CD8074C226086DB00926CF0 /* ServiceProvider */,
 				5CD8073C225F6DC800926CF0 /* API */,
 			);
 			path = Services;
@@ -109,6 +111,7 @@
 				5CD80740225F6F8500926CF0 /* NSErrorExtension.swift */,
 				5CD80748225F852900926CF0 /* StringExtension.swift */,
 				5CD8074A225F9C9D00926CF0 /* DateExtension.swift */,
+				5CD8074F2260B72A00926CF0 /* DoubleExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -127,6 +130,41 @@
 				5CD80746225F734900926CF0 /* Response.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5CD8074C226086DB00926CF0 /* ServiceProvider */ = {
+			isa = PBXGroup;
+			children = (
+				5CD8074D226086EC00926CF0 /* ServiceProvider.swift */,
+			);
+			path = ServiceProvider;
+			sourceTree = "<group>";
+		};
+		5CD807512260B83D00926CF0 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5CD807522260B85100926CF0 /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5CD807522260B85100926CF0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5CD8072C225F68BF00926CF0 /* ViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		5CD807532260B87300926CF0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5CD8072E225F68C100926CF0 /* Assets.xcassets */,
+				5CD80730225F68C100926CF0 /* Main.storyboard */,
+				5CD80733225F68C100926CF0 /* Info.plist */,
+				5CD80734225F68C100926CF0 /* Loader.entitlements */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +199,11 @@
 				TargetAttributes = {
 					5CD80726225F68BF00926CF0 = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -199,9 +242,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CD807502260B72A00926CF0 /* DoubleExtension.swift in Sources */,
 				5CD8072D225F68BF00926CF0 /* ViewController.swift in Sources */,
 				5CD8074B225F9C9D00926CF0 /* DateExtension.swift in Sources */,
 				5CD80749225F852900926CF0 /* StringExtension.swift in Sources */,
+				5CD8074E226086EC00926CF0 /* ServiceProvider.swift in Sources */,
 				5CD80744225F729F00926CF0 /* AppConfig.swift in Sources */,
 				5CD80741225F6F8500926CF0 /* NSErrorExtension.swift in Sources */,
 				5CD8073E225F6E0900926CF0 /* Connection.swift in Sources */,
@@ -345,6 +390,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = A9YX4986KW;
 				INFOPLIST_FILE = Loader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -362,6 +408,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = A9YX4986KW;
 				INFOPLIST_FILE = Loader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
